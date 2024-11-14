@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - El topo</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tienda - El topo</h1>
+        <div class="input-group">
+            <input type="number" placeholder="Cantidad" id="cantidad">
+            <input type="text" placeholder="ID del Producto" id="producto-id">
+            <button onclick="agregarProducto()">Agregar</button>
+        </div>
+        <div class="cart" id="carrito">
+            <h2>Carrito de compra - Iniciado el <span id="fecha-inicio"></span></h2>
+            <p class="cart-empty">No hay productos en el carro aún, prueba agregando arriba con su id y la cantidad que deseas ingresar.</p>
+            <table id="tabla-carrito" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Cant</th>
+                        <th>Nombre</th>
+                        <th>Precio U</th>
+                        <th>Precio T</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody id="contenido-carrito">                
+                </tbody>
+            </table>
+            <div class="cart-summary" id="resumen-carrito" style="display: none;">
+                Total de productos: <span id="total-productos"></span> <br>
+                Costo total del carrito: $<span id="costo-total"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
