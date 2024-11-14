@@ -54,24 +54,33 @@ function App() {
 
   return (
     <div className="p-4 mx-auto">
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text mb-6">
-        open source is love
-      </h1>
-
-      <div className="mb-4 flex space-x-2">
+      <section className="flex justify-center items-center">
+        <img src="/logo.webp" className="w-[18em]   py-8" alt="logo_wallbit" />
+        <a
+          href="https://wallbit.io/"
+          className="group  pt-6 text-xs inline-flex items-center space-x-1 transition-all duration-300 ease-in-out hover:text-[#0391d1]"
+          target="_blank"
+        >
+          <span>Nuestro sitio web</span>
+          <span className="transform transition-all duration-300 ease-in-out group-hover:translate-x-1 group-hover:text-[#0391d1]">
+            &rarr;
+          </span>
+        </a>
+      </section>
+      <div className="mb-4 text-black flex space-x-2">
         <input
           type="number"
           placeholder="ID del Producto"
           value={productId || ""}
           onChange={(e) => setProductId(Number(e.target.value))}
-          className="p-2 border border-gray-300 rounded w-1/2"
+          className="p-2 border border-[#3d8bff] rounded w-1/2"
         />
         <input
           type="number"
           placeholder="Cantidad"
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
-          className="p-2 border border-gray-300 rounded w-1/2"
+          className="p-2 border border-[#3d8bff] rounded w-1/2"
         />
         <button
           onClick={() => {
@@ -93,12 +102,12 @@ function App() {
                 });
             }
           }}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
+          className="px-4 py-2 bg-[#059dfb] text-gray-50 rounded transition-all duration-300 ease-in-out transform hover:bg-[#0391d1] hover:shadow-lg"
         >
           Agregar
         </button>
       </div>
-      <section className="border border-gray-300 rounded m-2 p-2">
+      <section className="border border-[#0391d1] rounded m-2 p-2">
         <Cart
           cart={cart}
           setCart={setCart}

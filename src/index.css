@@ -17,13 +17,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #ffffff;
+    background-color: #000000; 
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #ffffff;
+    background-color: #000000;
+  }
+}
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #3d8bff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #0391d1;
 }
 
 body {
@@ -51,17 +65,13 @@ button {
   transition: border-color 0.25s;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+input:focus {
+  outline: none;
+  border-color: #004977;
+  box-shadow: 0 0 4px rgba(5, 157, 251, 1), 0 0 8px rgba(5, 157, 251, 0.6); 
 }

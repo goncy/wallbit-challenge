@@ -66,7 +66,7 @@ const Cart: React.FC<CartProps> = ({
         </ul>
       </ul>
       {cart.length === 0 ? (
-        <h4 className="text-sm text-gray-500 justify-center mx-4">
+        <h4 className="text-sm text-gray-500 m-auto w-[30em] bg-gray-500 bg-opacity-50 p-4 rounded-lg">
           No hay productos en el carrito aún, prueba agregando alguno con su ID
           y la cantidad que deseas ingresar.
         </h4>
