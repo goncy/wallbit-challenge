@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Product {
   id: number;
@@ -11,7 +11,7 @@ interface Product {
 interface CartItemProps {
   item: Product;
   removeItem: (id: number) => void;
-  updateQuantity: (id: number, quantity: number) => void; // Nueva prop para actualizar la cantidad
+  updateQuantity: (id: number, quantity: number) => void;
 }
 
 const CartItem: React.FC<CartItemProps> = ({
@@ -19,7 +19,15 @@ const CartItem: React.FC<CartItemProps> = ({
   removeItem,
   updateQuantity,
 }) => {
-  const totalPrice = item.price * item.quantity;
+  const [inputValue, setInputValue] = useState(item.quantity);
+
+  useEffect(() => {
+    setInputValue(item.quantity);
+  }, [item.quantity]);
+
+  const totalPrice = item.price * inputValue;
+
+  const [previousValue, setPreviousValue] = useState(item.quantity);
 
   const limitTitleToWords = (title: string, wordLimit: number) => {
     const words = title.split(" ");
@@ -28,23 +36,18 @@ const CartItem: React.FC<CartItemProps> = ({
       : title;
   };
 
-  const [inputValue, setInputValue] = useState(item.quantity);
-  const [previousValue, setPreviousValue] = useState(item.quantity);
-
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuantity = Number(e.target.value);
-    setInputValue(newQuantity);
-
-    if (newQuantity >= 0) {
+    if (newQuantity > 0) {
+      setInputValue(newQuantity);
       updateQuantity(item.id, newQuantity);
     }
   };
 
   const handleBlur = () => {
     if (inputValue === 0) {
-      setInputValue(previousValue); // Restaurar el valor anterior si es cero
-    } else {
-      setPreviousValue(inputValue); // Actualizar el valor anterior
+      setInputValue(previousValue);
+      setPreviousValue(inputValue);
     }
   };
 
@@ -54,7 +57,7 @@ const CartItem: React.FC<CartItemProps> = ({
         type="number"
         value={inputValue}
         onChange={handleQuantityChange}
-        onBlur={handleBlur} // Manejar el evento blur
+        onBlur={handleBlur}
         className="w-16 text-center text-white bg-transparent border-none"
         min="0"
       />
