@@ -60,7 +60,9 @@ const ProductCartListComponent = () => {
             </p>
           )}
         </div>
-        <Button onClick={() => cleanCart()}>Limpiar carrito <X /></Button>
+        <Button onClick={() => cleanCart()}>
+          Limpiar carrito <X />
+        </Button>
       </CardHeader>
       <CardContent>
         <Table>
@@ -95,6 +97,7 @@ const ProductCartListComponent = () => {
                   <TableRow key={product.id}>
                     <TableCell className="font-medium">
                       <Input
+                        min={1}
                         className="flex-1"
                         type="number"
                         placeholder="Quantity"
