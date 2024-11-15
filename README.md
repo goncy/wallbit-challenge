@@ -9,7 +9,7 @@ Solución del desafío de Wallbit Junior Frontend Challenge, en la cual se crea 
 1. Clona el repositorio:
 
     ````
-    git clone https://github.com/EstebanSL/Cart-App.git
+    git clone https://github.com/EstebanSL/wallbit-challenge.git
     ````
 
 2. Ingresa a la carpeta del proyecto
@@ -69,5 +69,5 @@ Solución del desafío de Wallbit Junior Frontend Challenge, en la cual se crea 
 **Modo claro/oscuro**: La aplicación cuenta con un modo de visualización que permite a los usuarios alternar entre los modos claro y oscuro de acuerdo a sus preferencias o condiciones de iluminación.
 ## Demo
 
-https://wallbit-challenge-lovat.vercel.app
+https://wallbit-challenge-solution.vercel.app
 
