@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",           // Versión de JavaScript a compilar
+    "lib": [
+      "DOM",                      // APIs del navegador
+      "DOM.Iterable",            // Iteradores del DOM
+      "ESNext"                   // Características modernas de JavaScript
+    ],
+    "jsx": "react-jsx",          // Soporte para JSX en React
+    "module": "ESNext",          // Sistema de módulos a usar (imports/exports modernos)
+    "moduleResolution": "node",   // Cómo resolver las importaciones de módulos
+    "esModuleInterop": true,     // Mejor interoperabilidad entre CommonJS y ES Modules
+    "skipLibCheck": true,        // Omite verificación de archivos .d.ts
+    "forceConsistentCasingInFileNames": true,  // Asegura consistencia en mayúsculas/minúsculas
+    "allowJs": true,             // Permite archivos JavaScript
+    "noEmit": true              // No genera archivos JS (lo hace Vite)
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
