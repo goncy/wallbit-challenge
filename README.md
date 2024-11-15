@@ -1,65 +1,73 @@
-[![Wallbit](./assets/logo.jpg)](https://wallbit.io/)
 
-> El banco digital para trabajadores remotos.
+![Logo](https://wallbit.io/assets/logo-wallbit-fe8a4ef0.svg)
 
 # Wallbit Junior Frontend Challenge
 
-Para este desafío, nuestro cliente nos encargó hacer un carrito de compras para programadores. Tiene un formulario con 2 campos: ID del producto y cantidad. Los programadores habitualmente no necesitan saber ni ver que productos comprar, sino que saben por conexiones astrales cual es el ID del producto que quieren y así los agregan a su carrito.
+Solución del desafío de Wallbit Junior Frontend Challenge, en la cual se crea un carrito de compras. A continuación, se detallan las características implementadas y los pasos para correr el proyecto.
+## Instalación
 
-Cada vez que se agrega un producto, vamos a obtener el producto desde la API y lo vamos a mostrar en una tabla, junto a la cantidad que el usuario eligió.
+1. Clona el repositorio:
 
-> Solo lo mostramos visualmente por si hay alguien que no sea programador mirando la pantalla.
+    ````
+    git clone https://github.com/EstebanSL/Cart-App.git
+    ````
 
-La aplicación se vería así:
+2. Ingresa a la carpeta del proyecto
+    ````
+    cd Cart-App
+    ````
 
-![Sin productos](./assets/app-0.jpg)
-> Inicialmente no hay productos en el carrito
+3. Instala las dependencias
+    ````
+    npm install
+    ````
 
-![Con productos](./assets/app-1.jpg)
-> Con productos en el carrito
+3. Ejecutar el proyecto
+    ````
+    npm run dev
+    ````
+    
+## Tech Stack
 
-## Requisitos
+**React**: Biblioteca de JavaScript para construir interfaces de usuario.
 
-La API que nos dió nuestro cliente es: [Fake Store API](https://fakestoreapi.com/). El cliente nos dijo que su stack de frontend es React, que prefiere el challenge hecho con eso, pero está abierto a cualquier stack que quieras usar.
+**Zustand**: Biblioteca de administración de estado global para React.
 
-- [ ] Podemos agregar productos al carrito.
-- [ ] Manejar errores que nos devuelva la API.
-- [ ] Mostrar una lista con los productos agregados incluyendo `title`, `price` e `image` del producto y la `cantidad` que el usuario agregó.
+**react-hook-form**: Biblioteca para manejo de formularios en React.
 
-## Extras
+**Radix UI**: Componentes accesibles de UI para React.
 
-- [ ] El carrito se persiste al recargar la página.
-- [ ] Mostrar el total de productos agregados.
-- [ ] Mostrar el costo total del carrito.
-- [ ] Mostrar la fecha de creación del carrito.
+**Lucide React**: Íconos en SVG listos para React.
 
-## Bonus
+**react-hot-toast**: Notificaciones para React.
 
-Para destacar, podés agregar cualquier cosa que se te ocurra que llame la atención. No tiene por qué ser necesariamente en el código, o una dependencia. Puede ser algo visual, un easter egg, una funcionalidad, o bueno, algo en el código.
+**tailwindcss**: Framework de CSS para diseño rápido y responsivo.
 
-> [!NOTE]
-> Siempre recordá que lo que agregues debe sumar a la experiencia del usuario y no complicar su navegación. Tenés que pensar que quien va a usar la aplicación no va a haber hablado con vos previamente y aun así debería poder usar la aplicación y obtener la mejor experiencia posible.
+**TypeScript**: Superset de JavaScript que añade tipado estático.
 
-## Entregables
 
-- [ ] Crear un Pull Request a este repositorio con tu solución.
-- [ ] Reemplazar el `README.md` con instrucciones para correr el proyecto e información relevante para la evaluación.
-- [ ] Incluir el link al deploy de tu aplicación.
+## Features
 
-## Premio
+**Agregar productos al carrito**: Permite a los usuarios ingresar el ID de un producto y la cantidad deseada para añadirlo al carrito.
 
-Se va a entregar un premio en vivo durante [mi stream](https://twitch.tv/goncypozzo) el 19 de Noviembre de 2024 a las 19:00hs Argentina (GMT -3) entre todos los que completen el desafío. El premio va a ser un micrófono Razer Seiren Mini.
+**Gestión de errores**: Los errores provenientes de la API son gestionados y se muestran mensajes informativos al usuario.
 
-El ganador va a ser elegido por el chat, la gente de Wallbit y yo.
+**Visualización de productos en el carrito**: Muestra una tabla con los productos añadidos al carrito, incluyendo:
+- Nombre del producto
+- Precio
+- Imagen
+- Cantidad seleccionada por el usuario
 
-> [!IMPORTANT]
-> El ganador debe estar presente en el stream para recibir el premio.
+**Persistencia del carrito**: El contenido del carrito se mantiene al recargar la página.
 
-![Razer Seiren Mini](./assets/sorteo.jpg)
+**Cantidad total de productos**: Se muestra la cantidad total de productos añadidos al carrito.
 
-> En caso de no poder enviarse el premio, se pagará el equivalente de 70 USD.
+**Costo total del carrito**: Calcula y muestra el costo total de todos los productos en el carrito.
 
-El deadline para enviar el PR es el 19 de Noviembre de 2024 a las 15:00hs Argentina (GMT -3).
+**Fecha de creación del carrito**: Se guarda la fecha en la que se guardo el primer elemento en el carrito, esta tambien persiste y es reiniciada si es es vaciado
 
-> [!IMPORTANT]
-> Los PRs se cerrarán luego de esa hora así que no te olvides de hacerlo antes.
+**Modo claro/oscuro**: La aplicación cuenta con un modo de visualización que permite a los usuarios alternar entre los modos claro y oscuro de acuerdo a sus preferencias o condiciones de iluminación.
+## Demo
+
+https://wallbit-challenge-lovat.vercel.app
+
