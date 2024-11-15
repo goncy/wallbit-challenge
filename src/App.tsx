@@ -184,6 +184,15 @@ function App() {
           }
         />
       </section>
+
+      <footer className="m-auto pt-4 text-center text-sm ">
+        <p>
+          {new Date().getFullYear()} Powered by{" "}
+          <a href="#" className="text-blue-500 hover:text-blue-600">
+            Fiamy &reg;
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

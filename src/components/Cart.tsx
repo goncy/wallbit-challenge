@@ -32,6 +32,12 @@ const Cart: React.FC<CartProps> = ({
     });
   };
 
+  const updateQuantity = (id: number, quantity: number) => {
+    setCart((prevCart) =>
+      prevCart.map((item) => (item.id === id ? { ...item, quantity } : item))
+    );
+  };
+
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -72,7 +78,12 @@ const Cart: React.FC<CartProps> = ({
         </h4>
       ) : (
         cart.map((item) => (
-          <CartItem key={item.id} item={item} removeItem={removeItem} />
+          <CartItem
+            key={item.id}
+            item={item}
+            removeItem={removeItem}
+            updateQuantity={updateQuantity}
+          />
         ))
       )}
       {cart.length > 0 && (
@@ -84,7 +95,7 @@ const Cart: React.FC<CartProps> = ({
       {cart.length > 0 && (
         <button
           onClick={emptyCart}
-          className="px-4 py-2 bg-red-500 text-white rounded mt-4"
+          className="px-4 py-2 bg-[#db5026] hover:bg-[#b43d2d] text-white rounded mt-4"
         >
           Vaciar Carrito
         </button>

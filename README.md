@@ -1,65 +1,79 @@
-[![Wallbit](./assets/logo.jpg)](https://wallbit.io/)
+# Wallbit Junior Frontend Challenge - README
 
-> El banco digital para trabajadores remotos.
+<div style="display: flex; margin-top: 40px; margin-bottom: 40px;">
+  <img src="./public/app.webp" alt="Interfaz de la aplicación" style="width: 50%; max-width: 420px; margin-right: 10px;" />
+  <img src="./public/app2.webp" alt="Otra vista de la aplicación" style="width: 50%; max-width: 420px;" />
+</div>
 
-# Wallbit Junior Frontend Challenge
+Este proyecto es una solución al desafío de frontend propuesto por Wallbit y Gonzalo Pozzo, en el que se debía crear un carrito de compras utilizando preferentemente React. A continuación, se detallan las características implementadas y los pasos para correr el proyecto.
 
-Para este desafío, nuestro cliente nos encargó hacer un carrito de compras para programadores. Tiene un formulario con 2 campos: ID del producto y cantidad. Los programadores habitualmente no necesitan saber ni ver que productos comprar, sino que saben por conexiones astrales cual es el ID del producto que quieren y así los agregan a su carrito.
+## Descripción del Proyecto
 
-Cada vez que se agrega un producto, vamos a obtener el producto desde la API y lo vamos a mostrar en una tabla, junto a la cantidad que el usuario eligió.
+El objetivo de este ejercicio fue desarrollar una aplicación que permita a los usuarios agregar productos a un carrito de compras utilizando únicamente el ID del producto y la cantidad deseada. La aplicación utiliza la API de [Fake Store API](https://fakestoreapi.com/) para obtener la información de los productos.
 
-> Solo lo mostramos visualmente por si hay alguien que no sea programador mirando la pantalla.
+## Características Implementadas
 
-La aplicación se vería así:
+- **Agregar productos al carrito**: Los usuarios pueden ingresar el ID del producto y la cantidad deseada para agregar productos al carrito.
+- **Manejo de errores**: Se manejan los errores que devuelve la API, mostrando mensajes adecuados al usuario.
+- **Lista de productos agregados**: Se muestra una tabla con los productos agregados al carrito, incluyendo:
+  - Título del producto
+  - Precio del producto
+  - Imagen del producto
+  - Cantidad agregada por el usuario
 
-![Sin productos](./assets/app-0.jpg)
-> Inicialmente no hay productos en el carrito
+### Extras
 
-![Con productos](./assets/app-1.jpg)
-> Con productos en el carrito
+- **Persistencia del carrito**: El carrito se mantiene al recargar la página.
+- **Total de productos**: Se muestra el total de productos agregados en el carrito.
+- **Costo total del carrito**: Se calcula y muestra el costo total de todos los productos en el carrito.
+- **Fecha de creación del carrito**: Se muestra la fecha
+  - Se mantiene al recargar la página, no desaparece
+  - Al vaciar el carrito se reinicia la fecha
+  - Al eliminar todos los items se reinicia
+  - No cambia el valor al refrescar
 
-## Requisitos
+### Extras 2
 
-La API que nos dió nuestro cliente es: [Fake Store API](https://fakestoreapi.com/). El cliente nos dijo que su stack de frontend es React, que prefiere el challenge hecho con eso, pero está abierto a cualquier stack que quieras usar.
+- **Notificaciones visuales**: Se implementaron alertas que indican cuando un producto ha sido agregado con éxito
+- **Estilo de UI**: Se utilizó Tailwind CSS para proporcionar un diseño acorde a Wallbit
+- **Manejo de Cantidad**: Se incorporó un input que permite a los usuarios especificar la cantidad deseada para cada producto desde cada item al presionar el numero de cantidad. Si el usuario intenta establecer la cantidad en cero y luego sale del campo, el valor anterior se restaurará automáticamente, garantizando que no se guarde un valor invalido ni negativo.
 
-- [ ] Podemos agregar productos al carrito.
-- [ ] Manejar errores que nos devuelva la API.
-- [ ] Mostrar una lista con los productos agregados incluyendo `title`, `price` e `image` del producto y la `cantidad` que el usuario agregó.
+## Cómo Correr el Proyecto
 
-## Extras
+Este proyecto fue desarrollado utilizando Vite con React, TypeScript, PNPM y Tailwind CSS. A continuación se detallan los pasos para instalar y correr la aplicación:
 
-- [ ] El carrito se persiste al recargar la página.
-- [ ] Mostrar el total de productos agregados.
-- [ ] Mostrar el costo total del carrito.
-- [ ] Mostrar la fecha de creación del carrito.
+## Requisitos Previos
 
-## Bonus
+✅ Asegúrate de tener instalado Node.js y PNPM en tu sistema. Puedes verificar si están instalados ejecutando los siguientes comandos:
 
-Para destacar, podés agregar cualquier cosa que se te ocurra que llame la atención. No tiene por qué ser necesariamente en el código, o una dependencia. Puede ser algo visual, un easter egg, una funcionalidad, o bueno, algo en el código.
+| Comando   | Descripción                   |
+| --------- | ----------------------------- |
+| `node -v` | Muestra la versión de Node.js |
+| `pnpm -v` | Muestra la versión de PNPM    |
 
-> [!NOTE]
-> Siempre recordá que lo que agregues debe sumar a la experiencia del usuario y no complicar su navegación. Tenés que pensar que quien va a usar la aplicación no va a haber hablado con vos previamente y aun así debería poder usar la aplicación y obtener la mejor experiencia posible.
+### Clona el repositorio y configura el proyecto
 
-## Entregables
+A continuación, sigue estos pasos para clonar el repositorio e instalar las dependencias:
 
-- [ ] Crear un Pull Request a este repositorio con tu solución.
-- [ ] Reemplazar el `README.md` con instrucciones para correr el proyecto e información relevante para la evaluación.
-- [ ] Incluir el link al deploy de tu aplicación.
+| Comando                                                            | Descripción                          |
+| ------------------------------------------------------------------ | ------------------------------------ |
+| `git clone https://github.com/FiammaMuscari/wallbit-challenge.git` | Clona el repositorio                 |
+| `cd wallbit-challenge`                                             | Cambia al directorio del repositorio |
+| `pnpm install`                                                     | Instala las dependencias             |
+| `pnpm run dev`                                                     | Inicia el servidor de desarrollo     |
 
-## Premio
+Ahora puedes abrir el navegador en [http://localhost:5173/](http://localhost:5173/) y ver el proyecto sin problema.
 
-Se va a entregar un premio en vivo durante [mi stream](https://twitch.tv/goncypozzo) el 19 de Noviembre de 2024 a las 19:00hs Argentina (GMT -3) entre todos los que completen el desafío. El premio va a ser un micrófono Razer Seiren Mini.
-
-El ganador va a ser elegido por el chat, la gente de Wallbit y yo.
-
-> [!IMPORTANT]
-> El ganador debe estar presente en el stream para recibir el premio.
-
-![Razer Seiren Mini](./assets/sorteo.jpg)
-
-> En caso de no poder enviarse el premio, se pagará el equivalente de 70 USD.
-
-El deadline para enviar el PR es el 19 de Noviembre de 2024 a las 15:00hs Argentina (GMT -3).
-
-> [!IMPORTANT]
-> Los PRs se cerrarán luego de esa hora así que no te olvides de hacerlo antes.
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
+  <div>
+    Redes
+  </div>
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="https://www.twitch.tv/ninfuwu" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/-Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white" alt="Twitch" style="border-radius: 3px; margin-right: 5px;" />
+    </a>
+    <a href="https://x.com/__fiamy" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" style="border-radius: 3px;" />
+    </a>
+  </div>
+</div>
